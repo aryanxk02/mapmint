@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 1200px;
+    background-size: cover;
+    background-position: center;
+    background-color: lightsteelblue;
+
+}
+
+.parent{
+    background-color: lightsteelblue;
+}
+
+/* our list */
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+/* horizontal alignment of the list */
+ul li{
+    display: inline-block;
+}
+
+/* decorating the list items */
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+ul li a:hover{
+    background-color: #83c849;
+    color: black;
+}
+
+/* MapMint Logo */
+.logo img{
+    float: left;
+    margin-top: 10px;
+    width: 300px;
+    height: auto;
+}
+
+/* Alignment from both sides */
+.main{
+    max-width: 1650px;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -400%);
+}
+
+.title h1{
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    background-color: #83c849;
+    /* font-size: 10px; */
+}
+
+.tagline h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -450%);
+}
+
+.browse{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+}
+
+.modelImage1{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(-30%, 145%);
+}
+
+.modelImage1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.modelName1 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage2{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(-30%, 145%);
+}
+
+.modelImage2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName2 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage3{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(268%, 45%);
+}
+
+.modelName3 h2{
+    transform: translate(3%, 50%);
+}
+
+.modelImage3:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelImage4{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(268%, 45%);
+}
+
+.modelImage4:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName4 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage5{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(-140%, 155%);
+}
+
+.modelImage5:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName5 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage6{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(-140%, 155%);
+}
+
+.modelImage6:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName6 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage7{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(-140%, 155%);
+}
+
+.modelImage7:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName7 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage8{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(368%, 55%);
+}
+
+.modelImage8:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName8 h2{
+    transform: translate(33%, 50%);
+}
