@@ -1,0 +1,163 @@
+#encoding UTF-8
+#import zoo
+#encoding UTF-8
+#from Skeleton_bs import Skeleton_bs
+#extends Skeleton_bs 
+
+
+#def page_title
+MapMint: "Visualize"
+#end def
+
+<head>
+
+#def istyles
+<style>
+
+.modelImage1{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(0%, 55%);
+}
+
+.modelImage1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.modelName1 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage2{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(10%, 55%);
+}
+
+.modelImage2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName2 h2{
+    transform: translate(33%, 50%);
+}
+
+.modelImage3{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(20%, 55%);
+}
+
+.modelName3 h2{
+    transform: translate(1%, 50%);
+}
+
+.modelImage3:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelImage4{
+    /* aligns the cards horizontally */
+    display:inline-block;
+    padding: 50px 10px;
+    /* left-right, down-up */
+    transform: translate(30%, 55%);
+}
+
+.modelImage4:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.modelName4 h2{
+    transform: translate(33%, 50%);
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -400%);
+}
+
+.title h1{
+    text-align: center;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    background-color: #83c849;
+    /* font-size: 10px; */
+}
+
+.tagline h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -750%);
+}
+
+</style>
+</head>
+#end def
+
+
+#def body
+<body>
+    <header>
+        <div class="parent">
+
+            <div class="title">
+                <h1>MapMint 3D Viewer</h1>
+            </div>
+
+            <div class="tagline">
+                <h2>Open Source Solution to render and visualize 3D Models</h2>
+            </div>
+
+            <div class="modelImage1">
+                <a href="website/demo/preview-model-1">
+                    <img src="./website/images/Prince.png" width="300px"/>
+                </a>
+                <div class="modelName1">
+                    <h2>Prince</h2>
+                </div>
+            </div>
+
+            <div class="modelImage2">
+                <a href="website/demo/preview-model-2">
+                    <img src="website/images/quarters.png" width="300px">
+                </a>
+                <div class="modelName2">
+                    <h2>Quarters</h2>
+                </div>
+            </div>
+
+            <div class="modelImage3">
+                <a href="website/demo/preview-model-3">
+                    <img src="website/images/model-architecture.png" width="300px">
+                </a>
+                <div class="modelName3">
+                    <h2>Monument Architecture</h2>
+                </div>
+            </div>
+
+            <div class="modelImage4">
+                <a href="website/demo/preview-model-4">
+                    <img src="website/images/chapel.png" width="300px">
+                </a>
+                <div class="modelName4">
+                    <h2>Chapel</h2>
+                </div>
+            </div>
+
+        </div>
+    </header>
+</body>
+#end def
+
+</html>
