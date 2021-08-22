@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>File upload using NodeJS</h1>
+        <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <input type="submit" value="Upload"/>
+
+        <p>Select the file format of your data:</p>
+        <select id="File_Format" name="File_Format">
+            <option value="CityGML">CityGML</option>
+            <option value="LAS">LAS</option>
+            <!-- <option value="PointClouds">PointClouds</option> -->
+          </select>
+          <input type="submit">
+        </form>
+    </body>
+</html>
