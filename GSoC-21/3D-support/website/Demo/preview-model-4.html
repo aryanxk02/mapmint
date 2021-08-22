@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<hmtl>
+
+	<head>
+
+	<body>
+
+		<script type="module">
+
+			import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.module.js";
+			import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/controls/OrbitControls.js";
+			import { OBJLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/OBJLoader.js";
+			import { MTLLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/MTLLoader.js";
+			import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/GLTFLoader.js";
+
+			// setup
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera(2, window.innerWidth / window.innerHeight, 0.1, 10000);
+			var renderer = new THREE.WebGLRenderer({ antialias: true });
+
+			// renderer
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			// set-model-position
+			camera.position.z = 1500;
+			camera.position.x = 70;
+            camera.position.y = 80;
+
+			// user-controls
+			var controls = new OrbitControls(camera, renderer.domElement);
+			controls.enableDampling = true;
+			controls.campingFactor = 0.7;
+			controls.enableZoom = true;
+
+			// directional-lights
+			var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1)
+			keyLight.position.set(-100, 0, 100);
+
+			var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 1)
+			keyLight.position.set(-100, 0, 100);
+
+			var setLight = new THREE.DirectionalLight(0xffffff, 1.0)
+			setLight.position.set(-100, 0, 100);
+
+			scene.add(keyLight);
+			scene.add(fillLight);
+			scene.add(setLight);
+			
+			// set-background-light
+			scene.background = new THREE.Color(0x8D5145);
+
+			// illuminating-model
+			const colourOne = 0xb1e1ff;
+			const colourTwo = 0xb97a20;
+			const intensity = 1;
+			const light = new THREE.HemisphereLight(
+				colourOne,
+				colourTwo,
+				intensity
+			);
+			scene.add(light);
+
+			// loading-path-for-gltf-format
+			let loader = new GLTFLoader();
+			loader.load('./demo-models/model-4/scene.gltf', function (gltf) {
+				scene.add(gltf.scene);
+			});
+
+			// animate function to render on scene
+			function animate() {
+				requestAnimationFrame(animate);
+				controls.update();
+				renderer.render(scene, camera);
+			}
+			animate();
+
+		</script>
+	</body>
+	</head>
+</hmtl>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<hmtl>
+
+	<head>
+
+	<body>
+
+		<script type="module">
+
+			import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.module.js";
+			import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/controls/OrbitControls.js";
+			import { OBJLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/OBJLoader.js";
+			import { MTLLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/MTLLoader.js";
+			import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/GLTFLoader.js";
+
+			// setup
+			var scene = new THREE.Scene();
+			// far clipping: everything that is 10000 units away will not be rendered!
+			var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 990000000);
+			var renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.shadowMap.enabeld = true;			
+
+			// renderer
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			// set-model-position
+			camera.position.z = 14500;
+			camera.position.x = 2500;
+			camera.position.y = 2900;
+
+			// user-controls
+			var controls = new OrbitControls(camera, renderer.domElement);
+			controls.enableDampling = true;
+			controls.campingFactor = 0.7;
+			controls.enableZoom = true;
+
+			// directional-lights
+			var keyLight = new THREE.DirectionalLight(new THREE.Color(0x591815), 1)
+			keyLight.position.set(-100, 40, 100);
+
+			// plates
+			var fillLight = new THREE.DirectionalLight(new THREE.Color(0xA46734), 1)
+			keyLight.position.set(-100, 0, 70);
+
+			// shadows
+			var setLight = new THREE.DirectionalLight(0x00000, 8.0)
+			setLight.position.set(100, 10, 65);
+
+			scene.add(keyLight);
+			scene.add(fillLight);
+			scene.add(setLight);
+			
+			// set-background-light
+			scene.background = new THREE.Color(0x7C7A8A);
+
+			// illuminating-model
+			const colourOne = 6e4318	;
+			const colourTwo = 0xb97a20;
+			const intensity = 1;
+			const light = new THREE.HemisphereLight(
+				colourOne,
+				colourTwo,
+				intensity
+			);
+			scene.add(light);
+
+			// let mtlLoader = new MTLLoader();
+			// mtlLoader.setTexturePath("./demo-models/model-4/texts/textures");
+			// mtlLoader.setPath("./demo-models/model-4/texts/textures");
+
+
+			// loading-path-for-obj-format
+			let loader = new OBJLoader();
+			loader.load('./demo-models/model-3/Independent.obj', function (obj) {
+				scene.add(obj);
+			});
+
+			// animate function to render on scene
+			function animate() {
+				requestAnimationFrame(animate);
+				controls.update();
+				renderer.render(scene, camera);
+			}
+			animate();
+
+		</script>
+	</body>
+	</head>
+</hmtl>
